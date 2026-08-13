@@ -1,0 +1,62 @@
+[
+  {
+    "message_id": "MSG_0002",
+    "category": "action_required"
+  },
+  {
+    "message_id": "MSG_0007",
+    "category": "action_required"
+  },
+  {
+    "message_id": "MSG_0001",
+    "category": "meeting_or_event"
+  },
+  {
+    "message_id": "MSG_0003",
+    "category": "meeting_or_event"
+  },
+  {
+    "message_id": "MSG_0009",
+    "category": "personal_information"
+  },
+  {
+    "message_id": "MSG_0016",
+    "category": "personal_information"
+  },
+  {
+    "message_id": "MSG_0004",
+    "category": "general_information"
+  },
+  {
+    "message_id": "MSG_0006",
+    "category": "general_information"
+  },
+  {
+    "message_id": "MSG_0014",
+    "category": "promotional"
+  },
+  {
+    "message_id": "MSG_0015",
+    "category": "promotional"
+  },
+  {
+    "message_id": "MSG_0005",
+    "category": "sensitive_information"
+  },
+  {
+    "message_id": "MSG_0013",
+    "category": "sensitive_information"
+  },
+  {
+    "message_id": "MSG_0012",
+    "category": "general_information"
+  },
+  {
+    "message_id": "MSG_0024",
+    "category": "general_information"
+  },
+  {
+    "message_id": "MSG_0037",
+    "category": "general_information"
+  }
+]

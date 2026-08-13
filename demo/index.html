@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Signal / Noise — Message Triage Console</title>
+<style>
+  :root{
+    --ink:#1b1f23;
+    --paper:#f6f4ef;
+    --panel:#ffffff;
+    --line:#e2ddd0;
+    --muted:#736f64;
+    --signal:#1f6f5c;
+    --signal-bg:#e4f2ee;
+    --action:#b5541a;
+    --action-bg:#fbe9dc;
+    --meeting:#2b5aa3;
+    --meeting-bg:#e5eefb;
+    --personal:#7a4fa3;
+    --personal-bg:#f0e6f7;
+    --promo:#a3862b;
+    --promo-bg:#f8f0dc;
+    --sensitive:#a3282f;
+    --sensitive-bg:#fbe3e4;
+    --mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+    --serif: "Source Serif Pro", Georgia, serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family: var(--mono);
+    font-size:13px;
+  }
+  header{
+    padding:28px 32px 18px;
+    border-bottom:1px solid var(--line);
+    display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:12px;
+  }
+  header h1{
+    font-family: var(--serif);
+    font-weight:600;
+    font-size:26px;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  header h1 .slash{color:var(--muted); font-weight:400;}
+  header p{
+    margin:4px 0 0;
+    color:var(--muted);
+    font-size:12.5px;
+    max-width:520px;
+  }
+  .stat-row{display:flex; gap:18px; align-items:center;}
+  .stat{text-align:right;}
+  .stat .n{font-family:var(--serif); font-size:20px; font-weight:600;}
+  .stat .l{font-size:10.5px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em;}
+
+  .layout{display:grid; grid-template-columns:230px 1fr; min-height:calc(100vh - 96px);}
+  nav{border-right:1px solid var(--line); padding:20px 16px;}
+  nav .group-title{font-size:10.5px; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); margin:18px 0 8px;}
+  .cat-btn{
+    display:flex; justify-content:space-between; align-items:center;
+    width:100%; text-align:left; padding:7px 10px; margin-bottom:4px;
+    border:1px solid transparent; border-radius:5px; background:none; cursor:pointer;
+    font-family:var(--mono); font-size:12.5px; color:var(--ink);
+  }
+  .cat-btn:hover{background:var(--panel); border-color:var(--line);}
+  .cat-btn.active{background:var(--panel); border-color:var(--ink);}
+  .cat-btn .dot{width:8px; height:8px; border-radius:50%; display:inline-block; margin-right:8px;}
+  .cat-btn .count{color:var(--muted); font-size:11px;}
+  .mand-btn{
+    width:100%; text-align:left; padding:8px 10px; margin-top:6px; cursor:pointer;
+    border:1px dashed var(--line); border-radius:5px; background:var(--panel);
+    font-family:var(--mono); font-size:11.5px; color:var(--muted);
+  }
+  .mand-btn.active{border-color:var(--ink); color:var(--ink);}
+
+  main{padding:20px 28px 40px;}
+  .toolbar{display:flex; gap:10px; margin-bottom:16px; align-items:center;}
+  .toolbar input{
+    flex:1; padding:9px 12px; border:1px solid var(--line); border-radius:6px;
+    font-family:var(--mono); font-size:12.5px; background:var(--panel);
+  }
+  .toolbar .count-label{color:var(--muted); font-size:11.5px; white-space:nowrap;}
+
+  .card{
+    background:var(--panel); border:1px solid var(--line); border-radius:8px;
+    padding:14px 16px; margin-bottom:10px;
+  }
+  .card-top{display:flex; justify-content:space-between; align-items:flex-start; gap:12px;}
+  .badge{
+    display:inline-block; font-size:10px; text-transform:uppercase; letter-spacing:.05em;
+    padding:3px 8px; border-radius:20px; font-weight:600; white-space:nowrap;
+  }
+  .meta{color:var(--muted); font-size:11px; margin-top:3px;}
+  .msg-id{font-weight:600; color:var(--ink);}
+  .msg-text{margin:9px 0 6px; font-family:var(--serif); font-size:14.5px; line-height:1.5;}
+  .reason{color:var(--muted); font-size:11.5px; border-top:1px dashed var(--line); padding-top:8px; margin-top:8px;}
+  .reason b{color:var(--ink); font-weight:600;}
+  .extract-box{
+    margin-top:8px; padding:9px 11px; border-radius:6px; background:var(--paper);
+    border:1px solid var(--line); font-size:11.5px;
+  }
+  .extract-box .row{display:flex; gap:6px; margin-bottom:3px;}
+  .extract-box .k{color:var(--muted); min-width:70px;}
+  .extract-box .v{color:var(--ink);}
+  .extract-box .v.null{color:var(--muted); font-style:italic;}
+  .sens-box{
+    margin-top:8px; padding:9px 11px; border-radius:6px;
+    background:var(--sensitive-bg); border:1px solid #f0c9cb; font-size:11.5px;
+  }
+  .mand-flag{
+    font-size:10px; color:var(--ink); background:#fff2c9; border:1px solid #e8d383;
+    padding:2px 7px; border-radius:20px; margin-left:8px;
+  }
+  .empty{color:var(--muted); text-align:center; padding:60px 0; font-size:13px;}
+  footer{
+    padding:16px 32px; border-top:1px solid var(--line); color:var(--muted);
+    font-size:11px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+  }
+  @media (max-width: 720px){
+    .layout{grid-template-columns:1fr;}
+    nav{border-right:none; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:6px;}
+    nav .group-title{width:100%;}
+    .cat-btn, .mand-btn{width:auto;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>Signal <span class="slash">/</span> Noise</h1>
+  </div>
+  <div class="stat-row" id="statRow"></div>
+</header>
+
+<div class="layout">
+  <nav>
+    <div class="group-title">Categories</div>
+    <div id="catList"></div>
+    <div class="group-title">Demo Checklist</div>
+    <button class="mand-btn" id="mandBtn">15 mandatory IDs →</button>
+  </nav>
+
+  <main>
+    <div class="toolbar">
+      <input id="search" type="text" placeholder="Search message text or ID (e.g. MSG_0042)…">
+      <span class="count-label" id="countLabel"></span>
+    </div>
+    <div id="list"></div>
+  </main>
+</div>
+
+<footer>
+  <span>Rule-based classifier · Part 1–3 of the assignment · sensitive values masked before render</span>
+  <span id="genTime"></span>
+</footer>
+
+<script src="data.js"></script>
+<script>
+const CATS = [
+  {key:'action_required', label:'Action Required', color:'var(--action)', bg:'var(--action-bg)'},
+  {key:'meeting_or_event', label:'Meeting / Event', color:'var(--meeting)', bg:'var(--meeting-bg)'},
+  {key:'personal_information', label:'Personal Info', color:'var(--personal)', bg:'var(--personal-bg)'},
+  {key:'general_information', label:'General Info', color:'var(--signal)', bg:'var(--signal-bg)'},
+  {key:'promotional', label:'Promotional', color:'var(--promo)', bg:'var(--promo-bg)'},
+  {key:'sensitive_information', label:'Sensitive Info', color:'var(--sensitive)', bg:'var(--sensitive-bg)'},
+];
+const catMap = Object.fromEntries(CATS.map(c => [c.key, c]));
+
+let activeCat = null;
+let mandOnly = false;
+
+function renderStats(){
+  const total = window.MESSAGES.length;
+  const sensitiveN = window.MESSAGES.filter(m=>m.category==='sensitive_information').length;
+  const taskEventN = window.MESSAGES.reduce((a,m)=>a+m.extracted.length,0);
+  document.getElementById('statRow').innerHTML = `
+    <div class="stat"><div class="n">${total}</div><div class="l">Messages</div></div>
+    <div class="stat"><div class="n">${taskEventN}</div><div class="l">Tasks/Events</div></div>
+    <div class="stat"><div class="n">${sensitiveN}</div><div class="l">Sensitive</div></div>
+  `;
+}
+
+function renderCatList(){
+  const counts = {};
+  window.MESSAGES.forEach(m => counts[m.category] = (counts[m.category]||0)+1);
+  const el = document.getElementById('catList');
+  el.innerHTML = `<button class="cat-btn ${activeCat===null?'active':''}" data-cat="">
+      <span><span class="dot" style="background:var(--ink)"></span>All</span>
+      <span class="count">${window.MESSAGES.length}</span>
+    </button>` +
+    CATS.map(c => `
+      <button class="cat-btn ${activeCat===c.key?'active':''}" data-cat="${c.key}">
+        <span><span class="dot" style="background:${c.color}"></span>${c.label}</span>
+        <span class="count">${counts[c.key]||0}</span>
+      </button>
+    `).join('');
+  el.querySelectorAll('.cat-btn').forEach(b => b.addEventListener('click', () => {
+    activeCat = b.dataset.cat || null;
+    mandOnly = false;
+    document.getElementById('mandBtn').classList.remove('active');
+    renderCatList();
+    renderList();
+  }));
+}
+
+function fieldRow(k, v){
+  const isNull = v === null || v === undefined || v === '';
+  return `<div class="row"><span class="k">${k}</span><span class="v ${isNull?'null':''}">${isNull ? 'null (not stated)' : v}</span></div>`;
+}
+
+function renderExtract(item){
+  if(item.type === 'task'){
+    return `<div class="extract-box">
+      <div class="row"><span class="k">TASK</span><span class="v">${item.title || 'null'}</span></div>
+      ${fieldRow('deadline', item.deadline)}
+      ${fieldRow('time', item.time)}
+      ${fieldRow('person', item.person)}
+      ${fieldRow('priority', item.priority + (item.priority_basis ? ' — '+item.priority_basis : ''))}
+    </div>`;
+  } else {
+    return `<div class="extract-box">
+      <div class="row"><span class="k">EVENT</span><span class="v">${item.title || 'null'}</span></div>
+      ${fieldRow('date', item.date)}
+      ${fieldRow('time', item.time)}
+      ${fieldRow('location', item.location)}
+      ${fieldRow('priority', item.priority + (item.priority_basis ? ' — '+item.priority_basis : ''))}
+    </div>`;
+  }
+}
+
+function renderCard(m){
+  const cat = catMap[m.category];
+  const isMandatory = window.MANDATORY_IDS.includes(m.id);
+  return `<div class="card">
+    <div class="card-top">
+      <div>
+        <span class="msg-id">${m.id}</span>
+        <span class="meta">${m.timestamp} · ${m.sender}</span>
+        ${isMandatory ? '<span class="mand-flag">mandatory demo ID</span>' : ''}
+      </div>
+      <span class="badge" style="color:${cat.color}; background:${cat.bg}">${cat.label} · ${(m.confidence*100).toFixed(0)}%</span>
+    </div>
+    <div class="msg-text">${escapeHtml(m.text)}</div>
+    <div class="reason"><b>Why:</b> ${m.reason}</div>
+    ${m.extracted.map(renderExtract).join('')}
+    ${m.sensitive ? `<div class="sens-box">
+        <b>Sensitive:</b> ${m.sensitive.sensitivity_type.replace(/_/g,' ')}
+        · risk: <b>${m.sensitive.risk}</b>
+        · action: <b>${m.sensitive.recommended_action.replace(/_/g,' ')}</b>
+      </div>` : ''}
+  </div>`;
+}
+
+function escapeHtml(s){
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function renderList(){
+  const q = document.getElementById('search').value.trim().toLowerCase();
+  let items = window.MESSAGES;
+  if(activeCat) items = items.filter(m => m.category === activeCat);
+  if(mandOnly) items = items.filter(m => window.MANDATORY_IDS.includes(m.id));
+  if(q) items = items.filter(m => m.id.toLowerCase().includes(q) || m.text.toLowerCase().includes(q));
+
+  document.getElementById('countLabel').textContent = `${items.length} shown`;
+  const list = document.getElementById('list');
+  if(items.length === 0){
+    list.innerHTML = `<div class="empty">No messages match.</div>`;
+    return;
+  }
+  // Cap rendering for performance; search/category narrows it down.
+  const capped = items.slice(0, 120);
+  list.innerHTML = capped.map(renderCard).join('');
+  if(items.length > capped.length){
+    list.innerHTML += `<div class="empty">+ ${items.length - capped.length} more — narrow your search or pick a category.</div>`;
+  }
+}
+
+document.getElementById('search').addEventListener('input', renderList);
+document.getElementById('mandBtn').addEventListener('click', () => {
+  mandOnly = !mandOnly;
+  activeCat = null;
+  document.getElementById('mandBtn').classList.toggle('active', mandOnly);
+  renderCatList();
+  renderList();
+});
+
+renderStats();
+renderCatList();
+renderList();
+document.getElementById('genTime').textContent = `${window.MESSAGES.length} messages loaded client-side`;
+</script>
+</body>
+</html>

@@ -1,0 +1,802 @@
+[
+  {
+    "message_id": "MSG_0005",
+    "sensitivity_type": "home_address",
+    "risk": "medium",
+    "masked_text": "My home address is 42***************************.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a private home address."
+  },
+  {
+    "message_id": "MSG_0013",
+    "sensitivity_type": "payment_card_number",
+    "risk": "high",
+    "masked_text": "My card number is 41********************.",
+    "recommended_action": "do_not_send_to_external_service",
+    "reason": "Message contains a payment card number."
+  },
+  {
+    "message_id": "MSG_0018",
+    "sensitivity_type": "health_information",
+    "risk": "medium",
+    "masked_text": "My recent test result says vi*********************.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a personal health/medical detail."
+  },
+  {
+    "message_id": "MSG_0047",
+    "sensitivity_type": "account_recovery_code",
+    "risk": "high",
+    "masked_text": "My account recovery code is RC************.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains an account recovery code."
+  },
+  {
+    "message_id": "MSG_0053",
+    "sensitivity_type": "identification_number",
+    "risk": "medium",
+    "masked_text": "My identification number is ID***********.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a personal identification number."
+  },
+  {
+    "message_id": "MSG_0074",
+    "sensitivity_type": "auth_token",
+    "risk": "high",
+    "masked_text": "The temporary access token is to****************.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains a temporary authentication/access token."
+  },
+  {
+    "message_id": "MSG_0078",
+    "sensitivity_type": "health_information",
+    "risk": "medium",
+    "masked_text": "My recent test result says vi*********************.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a personal health/medical detail."
+  },
+  {
+    "message_id": "MSG_0086",
+    "sensitivity_type": "password",
+    "risk": "high",
+    "masked_text": "Use password Bl********** to sign in to the test account.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains a plaintext login password."
+  },
+  {
+    "message_id": "MSG_0095",
+    "sensitivity_type": "password",
+    "risk": "high",
+    "masked_text": "Use password Bl************* to sign in to the test account.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains a plaintext login password."
+  },
+  {
+    "message_id": "MSG_0106",
+    "sensitivity_type": "health_information",
+    "risk": "medium",
+    "masked_text": "My recent test result says vi*********************.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a personal health/medical detail."
+  },
+  {
+    "message_id": "MSG_0117",
+    "sensitivity_type": "auth_token",
+    "risk": "high",
+    "masked_text": "The temporary access token is to****************.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains a temporary authentication/access token."
+  },
+  {
+    "message_id": "MSG_0118",
+    "sensitivity_type": "identification_number",
+    "risk": "medium",
+    "masked_text": "My identification number is ID***********.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a personal identification number."
+  },
+  {
+    "message_id": "MSG_0120",
+    "sensitivity_type": "account_recovery_code",
+    "risk": "high",
+    "masked_text": "My account recovery code is RC************.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains an account recovery code."
+  },
+  {
+    "message_id": "MSG_0126",
+    "sensitivity_type": "private_phone_contact",
+    "risk": "medium",
+    "masked_text": "You can contact me on 98************.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a private phone number for direct contact."
+  },
+  {
+    "message_id": "MSG_0130",
+    "sensitivity_type": "home_address",
+    "risk": "medium",
+    "masked_text": "My home address is 42***************************.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a private home address."
+  },
+  {
+    "message_id": "MSG_0137",
+    "sensitivity_type": "account_recovery_code",
+    "risk": "high",
+    "masked_text": "My account recovery code is RC*********.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains an account recovery code."
+  },
+  {
+    "message_id": "MSG_0140",
+    "sensitivity_type": "password",
+    "risk": "high",
+    "masked_text": "Use password Bl************* to sign in to the test account.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains a plaintext login password."
+  },
+  {
+    "message_id": "MSG_0155",
+    "sensitivity_type": "account_recovery_code",
+    "risk": "high",
+    "masked_text": "My account recovery code is RC************.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains an account recovery code."
+  },
+  {
+    "message_id": "MSG_0172",
+    "sensitivity_type": "home_address",
+    "risk": "medium",
+    "masked_text": "My home address is 42***************************.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a private home address."
+  },
+  {
+    "message_id": "MSG_0187",
+    "sensitivity_type": "health_information",
+    "risk": "medium",
+    "masked_text": "My recent test result says vi*********************.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a personal health/medical detail."
+  },
+  {
+    "message_id": "MSG_0191",
+    "sensitivity_type": "private_phone_contact",
+    "risk": "medium",
+    "masked_text": "You can contact me on 98************.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a private phone number for direct contact."
+  },
+  {
+    "message_id": "MSG_0199",
+    "sensitivity_type": "home_address",
+    "risk": "medium",
+    "masked_text": "My home address is 42***************************.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a private home address."
+  },
+  {
+    "message_id": "MSG_0229",
+    "sensitivity_type": "identification_number",
+    "risk": "medium",
+    "masked_text": "My identification number is ID***********.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a personal identification number."
+  },
+  {
+    "message_id": "MSG_0233",
+    "sensitivity_type": "account_recovery_code",
+    "risk": "high",
+    "masked_text": "My account recovery code is RC************.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains an account recovery code."
+  },
+  {
+    "message_id": "MSG_0243",
+    "sensitivity_type": "one_time_password",
+    "risk": "high",
+    "masked_text": "Your OTP is 48*******. It expires in 10 minutes.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains a one-time password (OTP) value."
+  },
+  {
+    "message_id": "MSG_0254",
+    "sensitivity_type": "bank_account_number",
+    "risk": "high",
+    "masked_text": "Please note my bank account number 00*************.",
+    "recommended_action": "do_not_send_to_external_service",
+    "reason": "Message contains a bank account number."
+  },
+  {
+    "message_id": "MSG_0257",
+    "sensitivity_type": "bank_account_number",
+    "risk": "high",
+    "masked_text": "Please note my bank account number 00*************.",
+    "recommended_action": "do_not_send_to_external_service",
+    "reason": "Message contains a bank account number."
+  },
+  {
+    "message_id": "MSG_0264",
+    "sensitivity_type": "identification_number",
+    "risk": "medium",
+    "masked_text": "My identification number is ID***********.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a personal identification number."
+  },
+  {
+    "message_id": "MSG_0267",
+    "sensitivity_type": "bank_account_number",
+    "risk": "high",
+    "masked_text": "Please note my bank account number 00*************.",
+    "recommended_action": "do_not_send_to_external_service",
+    "reason": "Message contains a bank account number."
+  },
+  {
+    "message_id": "MSG_0273",
+    "sensitivity_type": "one_time_password",
+    "risk": "high",
+    "masked_text": "Your OTP is 48*******. It expires in 10 minutes.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains a one-time password (OTP) value."
+  },
+  {
+    "message_id": "MSG_0288",
+    "sensitivity_type": "one_time_password",
+    "risk": "high",
+    "masked_text": "Your OTP is 48*******. It expires in 10 minutes.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains a one-time password (OTP) value."
+  },
+  {
+    "message_id": "MSG_0315",
+    "sensitivity_type": "account_recovery_code",
+    "risk": "high",
+    "masked_text": "My account recovery code is RC************.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains an account recovery code."
+  },
+  {
+    "message_id": "MSG_0337",
+    "sensitivity_type": "private_phone_contact",
+    "risk": "medium",
+    "masked_text": "You can contact me on 98*********.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a private phone number for direct contact."
+  },
+  {
+    "message_id": "MSG_0344",
+    "sensitivity_type": "password",
+    "risk": "high",
+    "masked_text": "Use password Bl************* to sign in to the test account.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains a plaintext login password."
+  },
+  {
+    "message_id": "MSG_0346",
+    "sensitivity_type": "password",
+    "risk": "high",
+    "masked_text": "Use password Bl************* to sign in to the test account.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains a plaintext login password."
+  },
+  {
+    "message_id": "MSG_0347",
+    "sensitivity_type": "identification_number",
+    "risk": "medium",
+    "masked_text": "My identification number is ID***********.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a personal identification number."
+  },
+  {
+    "message_id": "MSG_0349",
+    "sensitivity_type": "identification_number",
+    "risk": "medium",
+    "masked_text": "My identification number is ID********.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a personal identification number."
+  },
+  {
+    "message_id": "MSG_0351",
+    "sensitivity_type": "auth_token",
+    "risk": "high",
+    "masked_text": "The temporary access token is to****************.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains a temporary authentication/access token."
+  },
+  {
+    "message_id": "MSG_0352",
+    "sensitivity_type": "bank_account_number",
+    "risk": "high",
+    "masked_text": "Please note my bank account number 00*************.",
+    "recommended_action": "do_not_send_to_external_service",
+    "reason": "Message contains a bank account number."
+  },
+  {
+    "message_id": "MSG_0367",
+    "sensitivity_type": "payment_card_number",
+    "risk": "high",
+    "masked_text": "My card number is 41********************.",
+    "recommended_action": "do_not_send_to_external_service",
+    "reason": "Message contains a payment card number."
+  },
+  {
+    "message_id": "MSG_0376",
+    "sensitivity_type": "password",
+    "risk": "high",
+    "masked_text": "Use password Bl************* to sign in to the test account.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains a plaintext login password."
+  },
+  {
+    "message_id": "MSG_0385",
+    "sensitivity_type": "home_address",
+    "risk": "medium",
+    "masked_text": "My home address is 42************************.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a private home address."
+  },
+  {
+    "message_id": "MSG_0389",
+    "sensitivity_type": "auth_token",
+    "risk": "high",
+    "masked_text": "The temporary access token is to*************.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains a temporary authentication/access token."
+  },
+  {
+    "message_id": "MSG_0397",
+    "sensitivity_type": "bank_account_number",
+    "risk": "high",
+    "masked_text": "Please note my bank account number 00*************.",
+    "recommended_action": "do_not_send_to_external_service",
+    "reason": "Message contains a bank account number."
+  },
+  {
+    "message_id": "MSG_0403",
+    "sensitivity_type": "account_recovery_code",
+    "risk": "high",
+    "masked_text": "My account recovery code is RC************.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains an account recovery code."
+  },
+  {
+    "message_id": "MSG_0411",
+    "sensitivity_type": "private_phone_contact",
+    "risk": "medium",
+    "masked_text": "You can contact me on 98************.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a private phone number for direct contact."
+  },
+  {
+    "message_id": "MSG_0416",
+    "sensitivity_type": "health_information",
+    "risk": "medium",
+    "masked_text": "My recent test result says vi*********************.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a personal health/medical detail."
+  },
+  {
+    "message_id": "MSG_0419",
+    "sensitivity_type": "payment_card_number",
+    "risk": "high",
+    "masked_text": "My card number is 41********************.",
+    "recommended_action": "do_not_send_to_external_service",
+    "reason": "Message contains a payment card number."
+  },
+  {
+    "message_id": "MSG_0436",
+    "sensitivity_type": "auth_token",
+    "risk": "high",
+    "masked_text": "The temporary access token is to****************.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains a temporary authentication/access token."
+  },
+  {
+    "message_id": "MSG_0471",
+    "sensitivity_type": "password",
+    "risk": "high",
+    "masked_text": "Use password Bl************* to sign in to the test account.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains a plaintext login password."
+  },
+  {
+    "message_id": "MSG_0475",
+    "sensitivity_type": "home_address",
+    "risk": "medium",
+    "masked_text": "My home address is 42***************************.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a private home address."
+  },
+  {
+    "message_id": "MSG_0494",
+    "sensitivity_type": "health_information",
+    "risk": "medium",
+    "masked_text": "My recent test result says vi*********************.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a personal health/medical detail."
+  },
+  {
+    "message_id": "MSG_0496",
+    "sensitivity_type": "identification_number",
+    "risk": "medium",
+    "masked_text": "My identification number is ID***********.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a personal identification number."
+  },
+  {
+    "message_id": "MSG_0507",
+    "sensitivity_type": "health_information",
+    "risk": "medium",
+    "masked_text": "My recent test result says vi*********************.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a personal health/medical detail."
+  },
+  {
+    "message_id": "MSG_0532",
+    "sensitivity_type": "home_address",
+    "risk": "medium",
+    "masked_text": "My home address is 42***************************.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a private home address."
+  },
+  {
+    "message_id": "MSG_0535",
+    "sensitivity_type": "home_address",
+    "risk": "medium",
+    "masked_text": "My home address is 42***************************.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a private home address."
+  },
+  {
+    "message_id": "MSG_0539",
+    "sensitivity_type": "home_address",
+    "risk": "medium",
+    "masked_text": "My home address is 42***************************.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a private home address."
+  },
+  {
+    "message_id": "MSG_0550",
+    "sensitivity_type": "private_phone_contact",
+    "risk": "medium",
+    "masked_text": "You can contact me on 98************.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a private phone number for direct contact."
+  },
+  {
+    "message_id": "MSG_0572",
+    "sensitivity_type": "auth_token",
+    "risk": "high",
+    "masked_text": "The temporary access token is to****************.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains a temporary authentication/access token."
+  },
+  {
+    "message_id": "MSG_0576",
+    "sensitivity_type": "identification_number",
+    "risk": "medium",
+    "masked_text": "My identification number is ID***********.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a personal identification number."
+  },
+  {
+    "message_id": "MSG_0581",
+    "sensitivity_type": "health_information",
+    "risk": "medium",
+    "masked_text": "My recent test result says vi******************.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a personal health/medical detail."
+  },
+  {
+    "message_id": "MSG_0591",
+    "sensitivity_type": "auth_token",
+    "risk": "high",
+    "masked_text": "The temporary access token is to****************.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains a temporary authentication/access token."
+  },
+  {
+    "message_id": "MSG_0595",
+    "sensitivity_type": "one_time_password",
+    "risk": "high",
+    "masked_text": "Your OTP is 48*******. It expires in 10 minutes.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains a one-time password (OTP) value."
+  },
+  {
+    "message_id": "MSG_0596",
+    "sensitivity_type": "one_time_password",
+    "risk": "high",
+    "masked_text": "Your OTP is 48*******. It expires in 10 minutes.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains a one-time password (OTP) value."
+  },
+  {
+    "message_id": "MSG_0604",
+    "sensitivity_type": "one_time_password",
+    "risk": "high",
+    "masked_text": "Your OTP is 48*******. It expires in 10 minutes.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains a one-time password (OTP) value."
+  },
+  {
+    "message_id": "MSG_0610",
+    "sensitivity_type": "payment_card_number",
+    "risk": "high",
+    "masked_text": "My card number is 41********************.",
+    "recommended_action": "do_not_send_to_external_service",
+    "reason": "Message contains a payment card number."
+  },
+  {
+    "message_id": "MSG_0636",
+    "sensitivity_type": "private_phone_contact",
+    "risk": "medium",
+    "masked_text": "You can contact me on 98************.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a private phone number for direct contact."
+  },
+  {
+    "message_id": "MSG_0641",
+    "sensitivity_type": "private_phone_contact",
+    "risk": "medium",
+    "masked_text": "You can contact me on 98************.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a private phone number for direct contact."
+  },
+  {
+    "message_id": "MSG_0642",
+    "sensitivity_type": "bank_account_number",
+    "risk": "high",
+    "masked_text": "Please note my bank account number 00*************.",
+    "recommended_action": "do_not_send_to_external_service",
+    "reason": "Message contains a bank account number."
+  },
+  {
+    "message_id": "MSG_0649",
+    "sensitivity_type": "payment_card_number",
+    "risk": "high",
+    "masked_text": "My card number is 41********************.",
+    "recommended_action": "do_not_send_to_external_service",
+    "reason": "Message contains a payment card number."
+  },
+  {
+    "message_id": "MSG_0651",
+    "sensitivity_type": "private_phone_contact",
+    "risk": "medium",
+    "masked_text": "You can contact me on 98************.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a private phone number for direct contact."
+  },
+  {
+    "message_id": "MSG_0678",
+    "sensitivity_type": "account_recovery_code",
+    "risk": "high",
+    "masked_text": "My account recovery code is RC************.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains an account recovery code."
+  },
+  {
+    "message_id": "MSG_0681",
+    "sensitivity_type": "payment_card_number",
+    "risk": "high",
+    "masked_text": "My card number is 41********************.",
+    "recommended_action": "do_not_send_to_external_service",
+    "reason": "Message contains a payment card number."
+  },
+  {
+    "message_id": "MSG_0684",
+    "sensitivity_type": "payment_card_number",
+    "risk": "high",
+    "masked_text": "My card number is 41********************.",
+    "recommended_action": "do_not_send_to_external_service",
+    "reason": "Message contains a payment card number."
+  },
+  {
+    "message_id": "MSG_0687",
+    "sensitivity_type": "auth_token",
+    "risk": "high",
+    "masked_text": "The temporary access token is to****************.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains a temporary authentication/access token."
+  },
+  {
+    "message_id": "MSG_0695",
+    "sensitivity_type": "private_phone_contact",
+    "risk": "medium",
+    "masked_text": "You can contact me on 98************.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a private phone number for direct contact."
+  },
+  {
+    "message_id": "MSG_0715",
+    "sensitivity_type": "auth_token",
+    "risk": "high",
+    "masked_text": "The temporary access token is to****************.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains a temporary authentication/access token."
+  },
+  {
+    "message_id": "MSG_0723",
+    "sensitivity_type": "account_recovery_code",
+    "risk": "high",
+    "masked_text": "My account recovery code is RC************.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains an account recovery code."
+  },
+  {
+    "message_id": "MSG_0726",
+    "sensitivity_type": "identification_number",
+    "risk": "medium",
+    "masked_text": "My identification number is ID***********.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a personal identification number."
+  },
+  {
+    "message_id": "MSG_0727",
+    "sensitivity_type": "password",
+    "risk": "high",
+    "masked_text": "Use password Bl************* to sign in to the test account.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains a plaintext login password."
+  },
+  {
+    "message_id": "MSG_0739",
+    "sensitivity_type": "health_information",
+    "risk": "medium",
+    "masked_text": "My recent test result says vi*********************.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a personal health/medical detail."
+  },
+  {
+    "message_id": "MSG_0749",
+    "sensitivity_type": "password",
+    "risk": "high",
+    "masked_text": "Use password Bl************* to sign in to the test account.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains a plaintext login password."
+  },
+  {
+    "message_id": "MSG_0751",
+    "sensitivity_type": "bank_account_number",
+    "risk": "high",
+    "masked_text": "Please note my bank account number 00*************.",
+    "recommended_action": "do_not_send_to_external_service",
+    "reason": "Message contains a bank account number."
+  },
+  {
+    "message_id": "MSG_0752",
+    "sensitivity_type": "bank_account_number",
+    "risk": "high",
+    "masked_text": "Please note my bank account number 00**********.",
+    "recommended_action": "do_not_send_to_external_service",
+    "reason": "Message contains a bank account number."
+  },
+  {
+    "message_id": "MSG_0753",
+    "sensitivity_type": "account_recovery_code",
+    "risk": "high",
+    "masked_text": "My account recovery code is RC************.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains an account recovery code."
+  },
+  {
+    "message_id": "MSG_0763",
+    "sensitivity_type": "identification_number",
+    "risk": "medium",
+    "masked_text": "My identification number is ID***********.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a personal identification number."
+  },
+  {
+    "message_id": "MSG_0772",
+    "sensitivity_type": "health_information",
+    "risk": "medium",
+    "masked_text": "My recent test result says vi*********************.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a personal health/medical detail."
+  },
+  {
+    "message_id": "MSG_0777",
+    "sensitivity_type": "password",
+    "risk": "high",
+    "masked_text": "Use password Bl************* to sign in to the test account.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains a plaintext login password."
+  },
+  {
+    "message_id": "MSG_0778",
+    "sensitivity_type": "auth_token",
+    "risk": "high",
+    "masked_text": "The temporary access token is to****************.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains a temporary authentication/access token."
+  },
+  {
+    "message_id": "MSG_0791",
+    "sensitivity_type": "one_time_password",
+    "risk": "high",
+    "masked_text": "Your OTP is 48*******. It expires in 10 minutes.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains a one-time password (OTP) value."
+  },
+  {
+    "message_id": "MSG_0802",
+    "sensitivity_type": "home_address",
+    "risk": "medium",
+    "masked_text": "My home address is 42***************************.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a private home address."
+  },
+  {
+    "message_id": "MSG_0803",
+    "sensitivity_type": "payment_card_number",
+    "risk": "high",
+    "masked_text": "My card number is 41********************.",
+    "recommended_action": "do_not_send_to_external_service",
+    "reason": "Message contains a payment card number."
+  },
+  {
+    "message_id": "MSG_0804",
+    "sensitivity_type": "private_phone_contact",
+    "risk": "medium",
+    "masked_text": "You can contact me on 98************.",
+    "recommended_action": "ask_for_confirmation",
+    "reason": "Message contains a private phone number for direct contact."
+  },
+  {
+    "message_id": "MSG_0812",
+    "sensitivity_type": "payment_card_number",
+    "risk": "high",
+    "masked_text": "My card number is 41*****************.",
+    "recommended_action": "do_not_send_to_external_service",
+    "reason": "Message contains a payment card number."
+  },
+  {
+    "message_id": "MSG_0813",
+    "sensitivity_type": "payment_card_number",
+    "risk": "high",
+    "masked_text": "My card number is 41********************.",
+    "recommended_action": "do_not_send_to_external_service",
+    "reason": "Message contains a payment card number."
+  },
+  {
+    "message_id": "MSG_0834",
+    "sensitivity_type": "one_time_password",
+    "risk": "high",
+    "masked_text": "Your OTP is 48****. It expires in 10 minutes.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains a one-time password (OTP) value."
+  },
+  {
+    "message_id": "MSG_0848",
+    "sensitivity_type": "bank_account_number",
+    "risk": "high",
+    "masked_text": "Please note my bank account number 00*************.",
+    "recommended_action": "do_not_send_to_external_service",
+    "reason": "Message contains a bank account number."
+  },
+  {
+    "message_id": "MSG_0854",
+    "sensitivity_type": "one_time_password",
+    "risk": "high",
+    "masked_text": "Your OTP is 48*******. It expires in 10 minutes.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains a one-time password (OTP) value."
+  },
+  {
+    "message_id": "MSG_0880",
+    "sensitivity_type": "one_time_password",
+    "risk": "high",
+    "masked_text": "Your OTP is 48*******. It expires in 10 minutes.",
+    "recommended_action": "do_not_store",
+    "reason": "Message contains a one-time password (OTP) value."
+  },
+  {
+    "message_id": "MSG_0890",
+    "sensitivity_type": "bank_account_number",
+    "risk": "high",
+    "masked_text": "Please note my bank account number 00*************.",
+    "recommended_action": "do_not_send_to_external_service",
+    "reason": "Message contains a bank account number."
+  }
+]
