@@ -3,7 +3,8 @@
 Rule-based system that classifies 900 messages into 6 categories, extracts tasks/events, and detects + masks sensitive information. No external AI API calls at runtime, no dataset upload anywhere.
 
 **Live demo:** https://aditichoudhury.github.io/kastack-message-triage/
-**Video walkthrough:** `<add Loom link here>`
+
+**Video walkthrough:** https://www.loom.com/share/a0aac7051f31410f98a52d66eeb02e82
 
 ## How it works
 
